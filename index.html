@@ -3,42 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Git Basics - Version Control Made Easy</title>
+    <title>Git Dev Features - Experimental</title>
     <link rel="stylesheet" href="css/style.css">
 
-    <!-- Tracking Script (Practice Only) -->
+    <!-- Dev Tracking & Features Script -->
     <script>
         (function () {
-            console.log("Tracking enabled");
+            console.log("Dev branch tracking enabled");
 
-            function trackEvent(type, label) {
-                console.log("Tracked:", type, "-", label);
-            }
-
-            document.addEventListener("click", function (event) {
+            // Track clicks on links, buttons, and commands
+            document.addEventListener("click", function(event) {
                 const target = event.target;
-
-                if (target.tagName === "A") {
-                    trackEvent("navigation", target.textContent.trim());
+                if (target.tagName === "A" || target.tagName === "BUTTON") {
+                    console.log("[DEV] Click tracked:", target.textContent.trim());
                 }
-
-                if (target.tagName === "BUTTON") {
-                    trackEvent("button", target.textContent.trim());
-                }
-
                 if (target.classList.contains("command-card")) {
-                    trackEvent("command", target.dataset.command);
+                    console.log("[DEV] Command tracked:", target.dataset.command);
                 }
             });
+
+            // Dark mode toggle
+            function toggleDarkMode() {
+                document.body.classList.toggle("dark-mode");
+            }
+            window.toggleDarkMode = toggleDarkMode;
+
+            // Search commands
+            function filterCommands() {
+                const input = document.getElementById("command-search").value.toLowerCase();
+                const commands = document.querySelectorAll(".command-card");
+                commands.forEach(cmd => {
+                    const text = cmd.textContent.toLowerCase();
+                    cmd.style.display = text.includes(input) ? "block" : "none";
+                });
+            }
+            window.filterCommands = filterCommands;
         })();
     </script>
+
+    <style>
+        /* Quick Dev Dark Mode Styling */
+        body.dark-mode {
+            background-color: #1e1e1e;
+            color: #f0f0f0;
+        }
+        body.dark-mode a { color: #4fc3f7; }
+        body.dark-mode .command-card { background-color: #333; border-color: #555; }
+    </style>
 </head>
 <body>
     <header id="home">
         <div class="container">
             <div class="logo">
                 <img src="img/logo.png" alt="Git Logo">
-                <h1>Git Basics</h1>
+                <h1>Git Dev Features</h1>
             </div>
             <nav>
                 <ul>
@@ -46,6 +64,7 @@
                     <li><a href="#commands">Commands</a></li>
                     <li><a href="#workflow">Workflow</a></li>
                     <li><a href="#about">About</a></li>
+                    <li><button onclick="toggleDarkMode()">Toggle Dark Mode</button></li>
                 </ul>
             </nav>
         </div>
@@ -54,12 +73,12 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <h2>Master Git Version Control</h2>
-                <p>Learn essential Git commands and workflows for modern software development</p>
-                <button class="btn-primary" onclick="scrollToSection('commands')">Get Started</button>
+                <h2>Explore New Dev Features</h2>
+                <p>Interactive commands, live search, and dark mode for practice in the dev branch.</p>
+                <button class="btn-primary" onclick="scrollToSection('commands')">View Commands</button>
             </div>
             <div class="hero-image">
-                <img src="img/img.png" alt="Git Workflow">
+                <img src="img/dev-hero.png" alt="Dev Workflow">
             </div>
         </div>
     </section>
@@ -67,6 +86,7 @@
     <section id="commands" class="commands">
         <div class="container">
             <h2>Essential Git Commands</h2>
+            <input type="text" id="command-search" placeholder="Search commands..." onkeyup="filterCommands()">
             <div class="command-grid">
                 <div class="command-card" data-command="init">
                     <h3>git init</h3>
@@ -119,27 +139,27 @@
 
     <section id="workflow" class="workflow">
         <div class="container">
-            <h2>Git Workflow</h2>
+            <h2>Git Workflow (Dev)</h2>
             <div class="workflow-steps">
                 <div class="step">
                     <div class="step-number">1</div>
                     <h3>Create / Modify</h3>
-                    <p>Make changes to your files in the working directory</p>
+                    <p>Make changes in your working directory.</p>
                 </div>
                 <div class="step">
                     <div class="step-number">2</div>
-                    <h3>Stage</h3>
-                    <p>Add files to the staging area using git add</p>
+                    <h3>Stage & Test</h3>
+                    <p>Stage changes and test features interactively.</p>
                 </div>
                 <div class="step">
                     <div class="step-number">3</div>
                     <h3>Commit</h3>
-                    <p>Save staged changes to repository history</p>
+                    <p>Save staged changes to repo history.</p>
                 </div>
                 <div class="step">
                     <div class="step-number">4</div>
-                    <h3>Push</h3>
-                    <p>Upload your commits to a remote repository</p>
+                    <h3>Push & Review</h3>
+                    <p>Push your dev branch and get feedback.</p>
                 </div>
             </div>
         </div>
@@ -147,23 +167,20 @@
 
     <section id="about" class="about">
         <div class="container">
-            <h2>About Git</h2>
-            <div class="about-content">
-                <p>Git is a distributed version control system designed to handle everything from small to very large projects with speed and efficiency.</p>
-                <p>Created by Linus Torvalds in 2005, Git has become the most widely used version control system in the world.</p>
-                <div class="stats">
-                    <div class="stat-item">
-                        <h3 id="repos-count">0</h3>
-                        <p>Million+ Repositories</p>
-                    </div>
-                    <div class="stat-item">
-                        <h3 id="developers-count">0</h3>
-                        <p>Million+ Developers</p>
-                    </div>
-                    <div class="stat-item">
-                        <h3 id="commits-count">0</h3>
-                        <p>Billion+ Commits</p>
-                    </div>
+            <h2>About Git Dev Features</h2>
+            <p>This dev branch includes new experimental features for learning Git workflows interactively.</p>
+            <div class="stats">
+                <div class="stat-item">
+                    <h3 id="repos-count">0</h3>
+                    <p>Million+ Repositories</p>
+                </div>
+                <div class="stat-item">
+                    <h3 id="developers-count">0</h3>
+                    <p>Million+ Developers</p>
+                </div>
+                <div class="stat-item">
+                    <h3 id="commits-count">0</h3>
+                    <p>Billion+ Commits</p>
                 </div>
             </div>
         </div>
@@ -171,7 +188,7 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2026 Git Basics. Learn Git - Version Control Made Easy</p>
+            <p>&copy; 2026 Git Dev Branch. Experimental Features</p>
         </div>
     </footer>
 
