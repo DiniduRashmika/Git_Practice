@@ -3,28 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Git Dev Features - Experimental</title>
+    <title>Git Dev Features - Experimental v2</title>
     <link rel="stylesheet" href="css/style.css">
 
     <!-- Dev Tracking & Features Script -->
     <script>
         (function () {
-            console.log("Dev branch tracking enabled");
+            console.log("Dev branch tracking enabled - v2");
 
             // Track clicks on links, buttons, and commands
             document.addEventListener("click", function(event) {
                 const target = event.target;
                 if (target.tagName === "A" || target.tagName === "BUTTON") {
-                    console.log("[DEV] Click tracked:", target.textContent.trim());
+                    console.log("[DEV v2] Click tracked:", target.textContent.trim());
                 }
                 if (target.classList.contains("command-card")) {
-                    console.log("[DEV] Command tracked:", target.dataset.command);
+                    console.log("[DEV v2] Command tracked:", target.dataset.command);
                 }
             });
 
             // Dark mode toggle
             function toggleDarkMode() {
                 document.body.classList.toggle("dark-mode");
+                console.log("Dark mode toggled!");
             }
             window.toggleDarkMode = toggleDarkMode;
 
@@ -44,11 +45,11 @@
     <style>
         /* Quick Dev Dark Mode Styling */
         body.dark-mode {
-            background-color: #1e1e1e;
-            color: #f0f0f0;
+            background-color: #121212;
+            color: #e0e0e0;
         }
-        body.dark-mode a { color: #4fc3f7; }
-        body.dark-mode .command-card { background-color: #333; border-color: #555; }
+        body.dark-mode a { color: #00bcd4; }
+        body.dark-mode .command-card { background-color: #2c2c2c; border-color: #555; }
     </style>
 </head>
 <body>
@@ -56,7 +57,7 @@
         <div class="container">
             <div class="logo">
                 <img src="img/logo.png" alt="Git Logo">
-                <h1>Git Dev Features</h1>
+                <h1>Git Dev Features v2</h1> <!-- changed title in header -->
             </div>
             <nav>
                 <ul>
@@ -73,8 +74,8 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <h2>Explore New Dev Features</h2>
-                <p>Interactive commands, live search, and dark mode for practice in the dev branch.</p>
+                <h2>Explore Dev Features v2</h2> <!-- slightly changed text -->
+                <p>Interactive commands, live search, dark mode, and new experimental tips!</p> <!-- added "new experimental tips" -->
                 <button class="btn-primary" onclick="scrollToSection('commands')">View Commands</button>
             </div>
             <div class="hero-image">
@@ -88,6 +89,14 @@
             <h2>Essential Git Commands</h2>
             <input type="text" id="command-search" placeholder="Search commands..." onkeyup="filterCommands()">
             <div class="command-grid">
+                <!-- Added a new command card to create a conflict when merging -->
+                <div class="command-card" data-command="stash">
+                    <h3>git stash</h3>
+                    <p>Temporarily save changes without committing</p>
+                    <code>git stash</code>
+                </div>
+
+                <!-- existing commands unchanged -->
                 <div class="command-card" data-command="init">
                     <h3>git init</h3>
                     <p>Initialize a new Git repository</p>
@@ -118,28 +127,13 @@
                     <p>Download and merge changes</p>
                     <code>git pull origin main</code>
                 </div>
-                <div class="command-card" data-command="branch">
-                    <h3>git branch</h3>
-                    <p>List, create, or delete branches</p>
-                    <code>git branch &lt;name&gt;</code>
-                </div>
-                <div class="command-card" data-command="merge">
-                    <h3>git merge</h3>
-                    <p>Merge branches together</p>
-                    <code>git merge &lt;branch&gt;</code>
-                </div>
-                <div class="command-card" data-command="status">
-                    <h3>git status</h3>
-                    <p>Check repository status</p>
-                    <code>git status</code>
-                </div>
             </div>
         </div>
     </section>
 
     <section id="workflow" class="workflow">
         <div class="container">
-            <h2>Git Workflow (Dev)</h2>
+            <h2>Git Workflow (Dev v2)</h2> <!-- updated title -->
             <div class="workflow-steps">
                 <div class="step">
                     <div class="step-number">1</div>
@@ -167,8 +161,8 @@
 
     <section id="about" class="about">
         <div class="container">
-            <h2>About Git Dev Features</h2>
-            <p>This dev branch includes new experimental features for learning Git workflows interactively.</p>
+            <h2>About Git Dev Features v2</h2> <!-- changed title -->
+            <p>This dev branch includes new experimental features and extra tips for learning Git workflows interactively.</p> <!-- slightly changed text -->
             <div class="stats">
                 <div class="stat-item">
                     <h3 id="repos-count">0</h3>
@@ -188,7 +182,7 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2026 Git Dev Branch. Experimental Features</p>
+            <p>&copy; 2026 Git Dev Branch v2. Experimental Features</p> <!-- updated footer -->
         </div>
     </footer>
 
