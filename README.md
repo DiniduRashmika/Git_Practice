@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Git Basics - Version Control Made Easy
 
 A simple, interactive website designed to help beginners learn Git version control basics. This project features a modern, responsive design with interactive elements and animations.
@@ -193,3 +194,7 @@ Potential improvements:
 **Happy Learning! 🚀**
 
 *Master Git and become a version control pro!*
+=======
+# Git_Practice
+Here is the repo for github and version controlling practice 
+>>>>>>> 75b927b935065400d308f25dad4a5d9f70196313
