@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git Dev Branch - Experimental Home</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Dev Branch Tracking Script -->
+    <script>
+        (function () {
+            console.log("Dev branch tracking enabled");
+
+            document.addEventListener("click", function (event) {
+                const target = event.target;
+                if (target.tagName === "A" || target.tagName === "BUTTON") {
+                    console.log("[DEV] Click tracked:", target.textContent.trim());
+                }
+            });
+        })();
+    </script>
+</head>
+<body>
+    <header id="home">
+        <div class="container">
+            <div class="logo">
+                <img src="img/logo.png" alt="Git Dev Logo">
+                <h1>Git Dev Home</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#workflow">Workflow</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Welcome to the Dev Branch</h2>
+                <p>Testing experimental features and layouts before merging to main</p>
+                <button class="btn-primary" onclick="scrollToSection('features')">Explore Features</button>
+            </div>
+            <div class="hero-image">
+                <img src="img/dev-hero.png" alt="Dev Workflow">
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="features">
+        <div class="container">
+            <h2>New Features</h2>
+            <ul>
+                <li>Interactive command cards with hover effects</li>
+                <li>Live click tracking for user actions</li>
+                <li>Dark mode toggle (experimental)</li>
+                <li>Enhanced workflow visualization</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="workflow" class="workflow">
+        <div class="container">
+            <h2>Git Workflow (Dev)</h2>
+            <p>Here we experiment with workflow visualizations and new step highlights.</p>
+            <div class="workflow-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Code / Modify</h3>
+                    <p>Try new ideas in this dev branch.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Stage & Test</h3>
+                    <p>Stage your changes and see how features work live.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Commit</h3>
+                    <p>Save your experimental commits.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Push / Review</h3>
+                    <p>Push your dev branch changes and get feedback.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contact Dev Team</h2>
+            <p>Email: devteam@example.com</p>
+            <p>Slack: #git-dev</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Git Dev Branch. Experimental Home</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
