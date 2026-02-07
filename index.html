@@ -5,9 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Git Basics - Version Control Made Easy</title>
     <link rel="stylesheet" href="css/style.css">
+
+    <!-- Tracking Script (Practice Only) -->
+    <script>
+        (function () {
+            console.log("Tracking enabled");
+
+            function trackEvent(type, label) {
+                console.log("Tracked:", type, "-", label);
+            }
+
+            document.addEventListener("click", function (event) {
+                const target = event.target;
+
+                if (target.tagName === "A") {
+                    trackEvent("navigation", target.textContent.trim());
+                }
+
+                if (target.tagName === "BUTTON") {
+                    trackEvent("button", target.textContent.trim());
+                }
+
+                if (target.classList.contains("command-card")) {
+                    trackEvent("command", target.dataset.command);
+                }
+            });
+        })();
+    </script>
 </head>
 <body>
-    <header>
+    <header id="home">
         <div class="container">
             <div class="logo">
                 <img src="img/logo.png" alt="Git Logo">
@@ -24,7 +51,7 @@
         </div>
     </header>
 
-    <section id="home" class="hero">
+    <section class="hero">
         <div class="container">
             <div class="hero-content">
                 <h2>Master Git Version Control</h2>
@@ -96,7 +123,7 @@
             <div class="workflow-steps">
                 <div class="step">
                     <div class="step-number">1</div>
-                    <h3>Create/Modify</h3>
+                    <h3>Create / Modify</h3>
                     <p>Make changes to your files in the working directory</p>
                 </div>
                 <div class="step">
